@@ -16,6 +16,7 @@ function component() {
   //  var myIcon = new Image();
   //  myIcon.src = yun;
   //  element.appendChild(myIcon);
+  console.log("hash1");
   return element;
 }
 document.body.appendChild(component());

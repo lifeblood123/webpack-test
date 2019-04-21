@@ -14,7 +14,14 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Output',
-      filename: 'index.html'
+      filename: 'index.html',
+      inject: 'head',
+      hash : true
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Output2',
+      filename: 'index2.html',
+      template: './src/my-index.ejs'
     })
   ],
   output: {
