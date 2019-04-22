@@ -1,27 +1,31 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const HtmlWebpackTemplate = require('html-webpack-template')
 console.log(__dirname);//d:/webpack-test  总工程的路径
 
 module.exports = {
   // entry: './src/index.js',
+
   entry: {
     app: './src/index.js',
     print: './src/print.js'
   },
+  devtool: 'inline-source-map',
+  devServer: {
+         contentBase: './dist'
+      },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Output',
-      filename: 'index.html',
-      inject: 'head',
-      hash : true
+      // filename: 'index.html',
+      // hash: true,
+      // template: './src/my-index.ejs',
+      favicon: path.resolve('src/image/a.ico')
     }),
     new HtmlWebpackPlugin({
       title: 'Output2',
-      filename: 'index2.html',
-      template: './src/my-index.ejs'
+      filename: 'index2.html'
     })
   ],
   output: {
