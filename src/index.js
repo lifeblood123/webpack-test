@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import './style.css';
 import yun from './image/yun.jpg';
-import {printMe} from './print.js';
+import { printMe } from './print.js';
 // import {printMe1} from './print.js';
 function component() {
   var element = document.createElement('div');
@@ -26,4 +26,10 @@ if (module.hot) {
     console.log('Accepting the updated printMe module!');
     printMe();
   })
+}
+if (process.env.NODE_ENV !== 'production') {
+  console.log('开发环境!');
+}else{
+  console.log("生产环境");
+
 }
