@@ -20,9 +20,9 @@ module.exports = {
   mode : "production",//设置开发模式，dist下的文件未压缩代码
   plugins: [
     new CleanWebpackPlugin(),
-    new UglifyJSPlugin({
-      test: /\.js($|\?)/i
-    }),
+    // new UglifyJSPlugin({
+    //   test: /\.js($|\?)/i
+    // }),     //压缩代码
     new HtmlWebpackPlugin({
       title: 'Output',
       // filename: 'index.html',
@@ -30,8 +30,6 @@ module.exports = {
       // template: './src/my-index.ejs',
       favicon: path.resolve('src/image/a.ico')
     }),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: 'Output2',
       filename: 'index2.html'
