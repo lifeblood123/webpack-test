@@ -16,10 +16,11 @@ module.exports = merge(common, {
             'process.env.NODE_ENV': JSON.stringify('production')
         })
     ],
-    mode: "production",
+    mode: "development",
     output: {
-        filename: '[name].min.js',
-        chunkFilename: '[name].bundle.js',
+        // filename: '[name].min.js',
+        // chunkFilename: '[name].bundle.[chunkhash].js',
+        filename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'dist')
     },
 

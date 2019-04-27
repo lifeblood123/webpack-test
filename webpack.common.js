@@ -3,7 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     entry: {
-        app: './src/index.js'
+        
+        main: './src/index.js',
+     vendor: [
+       'lodash'
+     ],
+
         // another: './src/another-module.js'
     },
     plugins: [
@@ -19,10 +24,15 @@ module.exports = {
       splitChunks: {
           cacheGroups: {
               commons: {
-                  name: "commons",
+                  name: "vender",
                   chunks: "initial",
-                  minChunks: 2
-              }
+                  minChunks: 1
+              },
+              commons: {
+                name: "manifest",
+                chunks: "initial",
+                minChunks: 1
+            }
           }
       }
   },//去掉重复引用  代替webpack.optimize.CommonsChunkPlugin
