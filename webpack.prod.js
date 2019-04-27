@@ -11,6 +11,9 @@ module.exports = merge(common, {
         new CleanWebpackPlugin(),
         new UglifyJSPlugin({
             sourceMap: true
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
         })
     ],
     mode: "production",
