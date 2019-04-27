@@ -3,8 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     entry: {
-        app: './src/index.js',
-        another: './src/another-module.js'
+        app: './src/index.js'
+        // another: './src/another-module.js'
     },
     plugins: [
         new HtmlWebpackPlugin({
